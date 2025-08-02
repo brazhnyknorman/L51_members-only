@@ -23,6 +23,13 @@
   </head>
 
   <body>
+    <header>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <% flash.each do |name, message| %>
+        <!--<div class="<%= name %>"><%= message %></div> -->
+      <%end%>
+    </header>
     <%= yield %>
   </body>
 </html>
