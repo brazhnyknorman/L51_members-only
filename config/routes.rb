@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts
   # resources :users, only: [ :index ]
 
   devise_for :users, controllers: {
@@ -6,6 +7,7 @@ Rails.application.routes.draw do
       }
 
   resources :users, only: [ :index, :show ]
+  resources :posts, only: [ :index, :new, :create ]
 
   root "users#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

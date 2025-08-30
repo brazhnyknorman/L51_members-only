@@ -1,0 +1,14 @@
+<div id="<%= dom_id post %>">
+  <strong><%= post.title %> </strong>
+  <h5>
+    Author: <% if user_signed_in? %>
+      <%= User.find(post.user_id).username %>
+    <% else %>
+      <strong>[REDACTED]</strong>
+    <% end %>
+  </h5>
+  <p>
+    <%= post.body %>
+  </p>
+</div>
+
